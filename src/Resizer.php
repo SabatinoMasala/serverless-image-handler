@@ -164,16 +164,29 @@ class Resizer {
      */
     public function url(): string
     {
-        $base = 'https://d13y40po3lsi1b.cloudfront.net/';
+        if (empty(config('serverless-image-handler.base_url'))) {
+            throw new \Exception('serverless-image-handler.base_url not set, set the CLOUDFRONT_URL environment variable');
+        }
+        if (empty(config('serverless-image-handler.bucket'))) {
+            throw new \Exception('serverless-image-handler.bucket not set, set the AWS_BUCKET environment variable');
+        }
         $body = [
-            'bucket' => 'youtube-serverless-image-handler',
+            'bucket' => config('serverless-image-handler.bucket'),
             'key' => $this->key,
             'edits' => $this->edits,
         ];
+        $base = config('serverless-image-handler.base_url');
+        if (substr($base, -1) !== '/') {
+            $base .= '/';
+        }
         return $base . base64_encode(json_encode($body));
     }
 
-    static function make($key) {
+    /**
+     * @param $key
+     * @return Resizer
+     */
+    static function make($key): Resizer {
         return new Resizer($key);
     }
 }

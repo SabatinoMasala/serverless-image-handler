@@ -22,12 +22,15 @@
             "Sabatino\\ServerlessImageHandler\\": "src"
         }
     },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sabatino\\ServerlessImageHandler\\ServerlessImageHandlerServiceProvider"
+            ]
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true
