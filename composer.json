@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SabatinoMasala\\ServerlessImageHandler\\": "src"
+            "Sabatino\\ServerlessImageHandler\\": "src"
         }
     },
     "config": {

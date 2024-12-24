@@ -1,6 +1,6 @@
 <?php
 
-namespace SabatinoMasala\ServerlessImageHandler;
+namespace Sabatino\ServerlessImageHandler;
 
 class Resizer {
 
