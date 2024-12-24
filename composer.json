@@ -1,0 +1,34 @@
+{
+    "name": "sabatinomasala/serverless-image-handler",
+    "description": "Helper class for the Serverless Image Handler on AWS",
+    "keywords": [
+        "SabatinoMasala",
+        "Image resizer"
+    ],
+    "homepage": "https://github.com/SabatinoMasala/serverless-image-handler",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SabatinoMasala",
+            "email": "masalasabatino@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "SabatinoMasala\\ServerlessImageHandler\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
